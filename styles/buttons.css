@@ -1,0 +1,49 @@
+.btn {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 2.25rem;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  font: var(--button);
+  color: var(--text-title);
+}
+
+.btn.primary {
+  position: relative;
+
+  background: var(--pink-dark);
+
+  z-index: 1;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* transform: translate(-50%, -50%); */
+
+    background-color: red;
+    border-radius: 50%;
+
+    height: 40px;
+    width: 40px;
+    scale: 0;
+    z-index: -1;
+    transition: scale 200ms;
+  }
+
+  &:hover::before {
+    scale: 1;
+  }
+}
+
+.btn.secondary {
+  background: var(--blue-dark);
+
+  &:hover {
+    background: var(--blue-mid);
+  }
+}

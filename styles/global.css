@@ -23,30 +23,44 @@
   /* Typography */
   --font-family: "Raleway", sans-serif;
 
-  --title-lg: 700 3rem / auto var(--font-family);
-  --title-md: 700 2.5rem / auto var(--font-family);
-  --title-sm: 700 2rem / auto var(--font-family);
-  --title-xs: 700 1rem / auto var(--font-family);
+  --title-lg: 700 3rem var(--font-family);
+  --title-md: 700 2.5rem var(--font-family);
+  --title-sm: 700 2rem var(--font-family);
+  --title-xs: 700 1rem var(--font-family);
 
   --subtitle: 500 2rem / 2 var(--font-family);
 
   --body-lg: 400 1.25rem / 1.4 var(--font-family);
   --body-md: 400 1rem / 1.4 var(--font-family);
   --body-sm: 400 0.875rem / 1.4 var(--font-family);
-  --body-xs: 400  0.75rem / 1.4 var(--font-family);
+  --body-xs: 400 0.75rem / 1.4 var(--font-family);
 
-  --button: 700 0.875rem / auto var(--font-family);
-  --link: 500 0.875rem / auto var(--font-family);
-  --tag: 700 0.5rem / auto var(--font-family);
+  --button: 700 0.875rem var(--font-family);
+  --link: 500 0.875rem var(--font-family);
+  --tag: 700 0.5rem var(--font-family);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font: inherit;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-ul, ol {
+html {
+  font: var(--body-md);
+  color: var(--text-body);
+}
+
+body {
+  background-color: var(--shape-background);
+}
+
+ul,
+ol {
   list-style-type: none;
 }
 
