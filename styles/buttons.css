@@ -1,4 +1,5 @@
-.btn {
+/* .btn {
+  position: relative;
   border: none;
   border-radius: 0.5rem;
   padding: 0.75rem 2.25rem;
@@ -8,42 +9,90 @@
 
   font: var(--button);
   color: var(--text-title);
-}
-
-.btn.primary {
-  position: relative;
-
-  background: var(--pink-dark);
-
   z-index: 1;
 
   &::before {
+    position: absolute;
     content: "";
 
-    position: absolute;
     top: 0;
-    right: 0;
-    /* transform: translate(-50%, -50%); */
-
-    background-color: red;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-
-    height: 40px;
-    width: 40px;
     scale: 0;
+
     z-index: -1;
-    transition: scale 200ms;
+    transition: scale 700ms ease;
   }
 
   &:hover::before {
-    scale: 1;
+    scale: 2;
+  }
+}
+
+.btn.primary {
+  background: var(--pink-dark);
+
+  &::before {
+    background-color: var(--pink-base);
   }
 }
 
 .btn.secondary {
   background: var(--blue-dark);
 
-  &:hover {
-    background: var(--blue-mid);
+  &::before {
+    background-color: var(--blue-mid);
+  }
+} */
+
+.btn {
+  position: relative;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 2.25rem;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  font: var(--button);
+  color: var(--text-title);
+  z-index: 1;
+
+  &::before {
+    position: absolute;
+    content: "";
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+
+    z-index: -1;
+    transition: height 400ms ease, width 400ms ease;
+  }
+
+  &:hover::before {
+    height: 300%;
+    width: 150%;
+  }
+}
+
+.btn.primary {
+  background: var(--pink-dark);
+
+  &::before {
+    background-color: var(--pink-base);
+  }
+}
+
+.btn.secondary {
+  background: var(--blue-dark);
+
+  &::before {
+    background-color: var(--blue-mid);
   }
 }
