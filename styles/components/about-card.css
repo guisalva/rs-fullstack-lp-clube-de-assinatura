@@ -1,0 +1,67 @@
+.about-card {
+  height: 26rem;
+  width: 18rem;
+  padding: 2rem 2rem 1.75rem;
+  background-color: var(--shape-base);
+  border: 1px solid var(--shape-stroke);
+  border-radius: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about-card .header {
+  & h5 {
+    font: var(--title-xs);
+    color: var(--blue-light);
+    margin-bottom: 1.5rem;
+  }
+
+  & .price {
+    & h4 {
+      font: var(--title-md);
+      color: var;
+      margin-bottom: 0.5rem;
+    }
+
+    & span {
+      font: var(--body-sm);
+      color: var(--text-label);
+    }
+  }
+}
+
+.about-card .details {
+  & ul {
+    display: grid;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+
+    & li {
+      position: relative;
+      padding-left: 28px;
+
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        height: 14px;
+        width: 14px;
+        background-image: url("../../assets/icons/star.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+
+  & .btn {
+    width: 100%;
+  }
+}
