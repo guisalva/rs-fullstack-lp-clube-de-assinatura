@@ -9,6 +9,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: background-color 400ms ease-in-out, box-shadow 400ms ease-in-out, transform 400ms ease-in-out;
+
+  &:hover {
+    background-color: var(--shape-hover);
+    box-shadow: 0px 0px 66px rgba(53, 139, 185, 0.1);
+    transform: translateY(-8px);
+    z-index: 2;
+  }
 }
 
 .about-card .header {
@@ -21,8 +29,12 @@
   & .price {
     & h4 {
       font: var(--title-md);
-      color: var;
       margin-bottom: 0.5rem;
+
+      &::after {
+        content: "/mês";
+        font: var(--title-xs);
+      }
     }
 
     & span {
@@ -40,10 +52,9 @@
 
     & li {
       position: relative;
-      padding-left: 28px;
+      padding-left: 22px;
 
-      display: flex;
-      align-items: center;
+      font: var(--body-xs);
 
       &::before {
         content: "";
@@ -53,7 +64,7 @@
         transform: translateY(-50%);
         height: 14px;
         width: 14px;
-        background-image: url("../../assets/icons/star.svg");
+        background-image: url("../../assets/icons/star-secondary.svg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -63,5 +74,61 @@
 
   & .btn {
     width: 100%;
+  }
+}
+
+/* Primary variant */
+.about-card.primary {
+  position: relative;
+  background-color: var(--shape-hover);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -0.7px;
+    left: 0;
+    transform: translate(70%, -100%);
+    height: 3.125rem;
+    width: 2.8125rem;
+    background: url("../../assets/icons/bunny.svg") no-repeat center / contain;
+  }
+}
+
+.about-card.primary .header {
+  position: relative;
+
+  & h5 {
+    color: var(--pink-light);
+
+    &::after {
+      content: "Popular";
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateY(-25%);
+      padding: 0.5625rem 1.25rem;
+
+      background-color: var(--shape-stroke);
+      font: var(--tag);
+      color: var(--text-body);
+      text-transform: uppercase;
+      border-radius: 999px;
+    }
+  }
+}
+
+.about-card.primary .details {
+  & ul li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 14px;
+    width: 14px;
+    background-image: url("../../assets/icons/star-primary.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
